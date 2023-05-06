@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <style>
+        button{
+            --b: 3px;
+            --s: .15em;
+            --c: black;
+            padding:calc(.05em +var(--s)) calc(.3em+var(--s));
+            color: var(--c);
+            --_p: var(--s);
+            background: 
+                conic-gradient(from 90deg at var(--b) var(--b),black 90deg,var(--c) 0) var(--_p)var(--_p)/calc(100% -var(--b)-2*var(--_p))calc(100%-var(--b)-2*(--_p));
+            transition: .3s linear, color 0s, background-color 0s;    
+            outline: var(--b) solid black;
+            outline-offset: .2em;
+        }
+        button:hover,
+        button:focus-visible{
+            --_p: 0px;
+            outline-color: var(--c);
+            outline-offset: .05em;
+        }
+        button:active{
+            background: var(--c);
+            color: white;
+        }
+        body{
+            height: 100vh;
+            margin: 0;
+            display: grid;
+            grid-template-columns: auto auto;
+            gap:20px;
+            place-content: center;
+            background: #daedfb;
+        }
+        button{
+            font-family: system-ui,  sans-serif;
+            font-weight: bold;
+            font-size: 4rem;
+            cursor: pointer;
+            border: none;
+            margin: .1em;
+        }
+    </style>
+</head>
+<body>
+    <button style="--c: black;--b: 5px; --s:12px">
+    Button</button>
+    
+</body>
+</html>
